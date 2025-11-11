@@ -192,19 +192,194 @@ dynamiky a zákonitostí
 - Čím více slabých vazeb v síti existuje, tím rychleji a efektivněji se informace šíří mezi vzdálenými částmi sítě
 - Nedostatek slabých vazeb vede k izolaci skupin
 
-Vysvětlete pojem bod zvratu ve vztahu k sociální dynamice, popište jeho zachycení v konkrétním modelu.
-Vysvětlete rozdíl mezi šířením jednoduché nákazy a šířením komplexní nákazy (v síti).
-Vysvětlete pozici simulace mezi vědeckými metodami (např. tak, že uvedete rozdíl mezi indukcí, dedukcí a simulací).
-Vysvětlete pojem model, uveďte hlavní kategorie modelů.
-Jmenujte základní kroky tvorby agentových simulačních modelů.
-Vysvětlete, z čeho se skládá a k čemu se používá protokol ODD.
-Vysvětlete, proč je třeba agentové modely kalibrovat a jak se to provádí.
-Vysvětlete rozdíl mezi validací a verifikací agentového simulačního modelu.
-Popište, z jakých hledisek je model zkoumán při prověřování validity.
-Jmenujte aplikační oblasti, v nichž se uplatňují modely pohybu chodců (davu).
-Vysvětlete principy modelování pohybu chodců (davu).
-Jmenujte (nakreslete) typické struktury, které mohou být generovány pohybem chodců.
-Vysvětlete pojem základní diagram (ve vztahu k modelování pohybu chodců).
-Uveďte, podle jakých hledisek lze klasifikovat modelovací přístupy, použitelné v simulacích pohybu chodců.
-Popište modelování pohybu chodců za využití buněčného automatu.
-Popište modelování pohybu chodců za využití modelu sociálních sil.
+Hypotéza slabých vazeb: pokud má osoba
+X vazbu s osobami Y, Z, tak je větší šance,
+že i mezi Y a Z existuje vazba.
+- Sociální síť je tvořena skupinami, intenzivně (silně)
+  propojenými uvnitř a slabě spojenými navenek.
+- Rychlost a míra šíření v síti závisí na spojích mezi prvky sítě.
+  Slabé vazby mnohonásobně zvyšují počet propojení; s jejich
+  počtem roste rychlost šíření.
+- Pokud skupina nemá dostatek slabých vazeb, nezíská
+  informace ze vzdálenějších částí sociální sítě (tj. členové
+  skupiny budou mít přístup jen k novinkám a názorům zevnitř
+  vlastní skupiny).
+
+### 20. Vysvětlete pojem bod zvratu ve vztahu k sociální dynamice, popište jeho zachycení v konkrétním modelu.
+
+- Moment, kdy se chování jednotlivce nebo skupiny náhle změní v závislosti na chování ostatních
+- Při jehož překročení se jednotlivec rozhodne přidat k určitému kolektivnímu chování
+
+Bod zvratu (prahová hodnota, treshold)
+- Moment, kdy se jedinec přidá k davovému chování
+- Prahová hodnota je individuální a souvisí s užitkem (ziskem)
+  z toho, že se jedinec chová/nechová stejně, jako okolí
+  5 agentů se rozhoduje, zda nosit výstřední
+  módní doplněk, například červenou
+  čepičku
+  a) Prahové hodnoty 1,1,1,2,2 (průměr
+  1,4) …žádný agent si čepičku nevezme
+  b) 0,1,2,2,2 (průměr 1,4) …první agent si
+  čepičku vezme, to je důvod, aby si ji
+  vzal druhý agent, což je důvod, aby si ji
+  vzali i další tři agenti najednou
+  c) 0,1,2,3,4 (průměr 2,5)
+  Kolektivní akce je pravděpodobnější, když
+  prahové hodnoty jsou nižší a variabilnější.
+
+### 21. Vysvětlete rozdíl mezi šířením jednoduché nákazy a šířením komplexní nákazy (v síti).
+
+#### Jednoduchá nákaza
+
+- Jedinci se „nakazí“ už po jediném kontaktu s nakaženým sousedem
+- Šíření je lineární – pravděpodobnost přenosu závisí jen na kontaktu mezi dvěma uzly
+- Modely: SI, SIS, SIR
+
+#### Komplexní nákaza
+
+- K přenosu je potřeba opakovaný nebo souběžný vliv více sousedů
+- Šíření je nelineární – jedinec změní stav (např. přijme inovaci), až když podíl nakažených sousedů splní prahovou podmínku
+
+### 22. Vysvětlete pozici simulace mezi vědeckými metodami (např. tak, že uvedete rozdíl mezi indukcí, dedukcí a simulací).
+Výpočetní modely vs. vědecké metody
+- Indukce
+    - Pracujeme přímo se zkoumaným systémem, který může být i
+      obrovský
+    - Odhalování nových vztahů z empirických dat – např. vyhodnocování
+      dotazníků, výsledků měření,…
+    - Závěry jsou jen popisné
+- Dedukce
+    - Pracujeme se zjednodušeným modelem světa
+    - Odvozování a dokazování nových tvrzení z daných předpokladů a
+      platných axiomů - např. hledání rovnovážného bodu ve hře pro dva
+      hráče za předpokladu axiomu o racionálním výběru
+    - Exaktní důkazy jsou možné jen při malém modelu
+- Simulace
+    - Používají se modely (jako v dedukci), ale neprovádí se dokazování
+      platnosti tvrzení, nýbrž generování dat, která zkoumáme a
+      popisujeme a která mají jiný charakter, než data sbíraná/měřená a
+      zpracovávaná induktivně
+
+### 23. Vysvětlete pojem model, uveďte hlavní kategorie modelů.
+Model = výsledek procesu
+modelování; zjednodušená
+reprezentace objektů nebo
+jevů/procesů reálného světa
+Typy modelů
+- Mentální – základ lidského vnímání světa a myšlení
+- Fyzické – reálné objekty; měřítko (zvětšení/zmenšení)
+- Matematické – rovnice vyjadřující stav světa
+    - Popisné modely vystihují vztahy proměnných v časovém
+      okamžiku (např. regresní modely), nic nevysvětlují
+    - Dynamické (analytické) modely říkají, jak se mění hodnoty
+      proměnných v čase (např. diferenciální rovnice, např. vztah
+      mezi velikostí populace predátora a populace kořisti; vztah
+      nabídka-poptávka); hledáme řešení (např. rovnovážnou situaci)
+- Výpočetní (programy nebo matematické zápisy) model
+  zkoumáme simulací (výpočtem – spuštění programu
+  nebo řešení rovnic); nutný je dostatečný výpočetní
+  výkon
+
+### 24. Jmenujte základní kroky tvorby agentových simulačních modelů.
+1. Návrh modelu
+2. Implementace modelu
+3. Verifikace a validace
+4. Simulace a analýza
+5. Sumarizace a sdílení výsledků
+6. Reprodukce simulace
+
+### 25. Vysvětlete, z čeho se skládá a k čemu se používá protokol ODD.
+Standardní protokol pro formulování a popis agentových modelů
+<img width="1123" height="622" alt="image" src="https://github.com/user-attachments/assets/1dd03dc6-a9b9-48a4-8583-57ea79128a94" />
+<img width="1182" height="763" alt="image" src="https://github.com/user-attachments/assets/35211397-e209-4e36-8f5f-b456219b0e76" />
+
+### 26. Vysvětlete, proč je třeba agentové modely kalibrovat a jak se to provádí.
+Agentové modely popisují individuální chování agentů pomocí mnoha parametrů
+Tyto parametry nejsou univerzální a musí odpovídat reálnému chování lidí v daném prostředí.
+Je tedy třeba kalibrovat (= doplnit kvantitativní informace, nastavit parametry podle reality nebo historických dat, dat z dotazníků, statisticky zpracovaných měření,…)
+
+### 27. Vysvětlete rozdíl mezi validací a verifikací agentového simulačního modelu.
+Validace = ověření, zda model odpovídá chování reálného systému  
+Verifikace = ověření, zda model dělá, co si myslíme, že by dělat měl
+
+### 28. Popište, z jakých hledisek je model zkoumán při prověřování validity.
+- Strukturální validita = zda vztahy v modelu odpovídají vztahům v reálném systému
+- Prediktivní validita = zda chování modelu odpovídá chování reálného systému
+    - Základní validita = chování modelu se základními parametry odpovídá systému
+    - Retrodikce = použijeme-li historická data, model dává odpovídající výsledky pro daný časový interval
+    - Rovnováha = pokud lze analyticky stanovit rovnovážný stav při určitých podmínkách, model jej musí produkovat
+    - Mezní hodnoty parametrů = zda se model chová přijatelně při krajích (i když nereálných) hodnotách
+
+### 29. Jmenujte aplikační oblasti, v nichž se uplatňují modely pohybu chodců (davu).
+- Dopravní plánování a architektura – efektivnost dopravy, evakuační postupy pro různá prostředí
+- Psychologie – ověřování hypotéz o chování lidí za různých situací
+- Marketing – porozumění chování lidí – muzea, letiště, nákupní centra
+- Vizuální efekty – věrohodné modely pro filmy, počítačové hry
+- Informatika – umělá inteligence, algoritmy pro předchozí aplikace
+
+### 30. Vysvětlete principy modelování pohybu chodců (davu).
+- Agent reprezentuje typického chodce, který se řídí jednoduchými pravidly
+- Chůzi chápeme jako aktivitu částečně
+    - cílenou (chodec obvykle má cíl)
+    - náhodnou (vyhýbání se, drobné změny směru a rychlosti)
+- Prostor je dvourozměrný
+- Podstatné je měřítko
+    - Prostorové (rozměr chodce ve vztahu k rozměru mapy)
+    - Časové (rychlost chodce ve vztahu k běhu simulace)
+
+### 31. Jmenujte (nakreslete) typické struktury, které mohou být generovány pohybem chodců.
+
+- Tvorba linií (laning) – chodci jdoucí opačnými směry spontánně vytvářejí oddělené pruhy pohybu, aby si usnadnili průchod
+- Fronty (queue formation) – v místech s překážkami nebo úzkými průchody vznikají fronty díky postupnému přizpůsobování pohybu ostatním
+- Stop-and-go vlny – v hustém davu se pohyb střídá mezi zastavením a rozchodem, podobně jako u dopravních kolon
+- Zip-efekt (zipper merging) – při průchodu zúženým místem se chodci střídavě zařazují z obou směrů, čímž vzniká plynulejší proud
+- Herding (efekt stáda) – tendence lidí sledovat ostatní, zejména v nejistých nebo krizových situacích
+- Faster-is-slower efekt – snaha jednotlivců zrychlit vede paradoxně ke zpomalení celého proudu (např. při panice u východu)
+
+### 32. Vysvětlete pojem základní diagram (ve vztahu k modelování pohybu chodců).
+- Empirická zjišťování vztahu mezi hustotou davu a rychlostí, liší se pro různé prostory (chodník, náměstí, schodiště,…)
+- Analogie: pohyb tekutin
+- Možnost validace modelu!
+
+### 33. Uveďte, podle jakých hledisek lze klasifikovat modelovací přístupy, použitelné v simulacích pohybu chodců.
+
+- Mikroskopický model – zachycuje jednotlivé chodce s individuálními charakteristikami a trasami
+- Makroskopický model – agregovaný pohled, popisuje proudění davu pomocí veličin jako hustota a rychlost
+- Rozlišení proměnných – prostor, čas a rychlost mohou být diskrétní nebo spojité
+- Deterministický model – další stav systému je jednoznačně určen předchozím stavem a akcemi
+- Stochastický model – využívá pravděpodobnosti k překlenutí neznalosti detailních procesů
+- Pravidlový model (rule-based) – agent se řídí souborem pravidel pro různé situace
+- Model sil (force-based) – chování agenta je výsledkem působení sil z okolí (cíle, ostatní chodci, překážky)
+- Vysoce věrné modely (high-fidelity) – snaha o realistické zobrazení chování i za cenu složitosti
+- Málo věrné modely (low-fidelity) – chodec reprezentován zjednodušeně (např. částice), menší počet parametrů
+
+### 34. Popište modelování pohybu chodců za využití buněčného automatu.
+
+- Prostor – reprezentován jako diskrétní 2D mřížka
+- Buňka – může obsahovat nejvýše jednoho chodce, překážku nebo být prázdná
+- Čas – diskrétní kroky; všichni agenti se pohybují paralelně
+- Konflikty – při snaze více chodců vstoupit do stejné buňky se rozhoduje podle pravidel nebo pravděpodobností
+- Směr pohybu – určen podle stavu okolních buněk (blízkost cíle, vyhýbání se kolizím)
+- Reprezentace – matice pravděpodobností přechodu do sousedních buněk
+- Varianty modelu:
+    - různé rychlosti a typy chodců
+    - různé definice okolí buňky (4, 6, 8 sousedů)
+    - možnost více chodců v jedné buňce (rozšířené verze)
+
+### 35. Popište modelování pohybu chodců za využití modelu sociálních sil.
+
+- Každý chodec je modelován jako částice, na kterou působí síly:
+    - přitažlivá síla směrem k cíli
+    - odpudivé síly od ostatních chodců a překážek
+    - vlivy prostředí – světelné, zvukové signály, stres, sklon terénu
+- Výsledné chování je dáno součtem všech působících sil
+- Do výpočtu mohou vstupovat i další faktory:
+    - omezené zorné pole
+    - snaha šetřit energií
+    - držení se ve skupině
+- Výhody:
+    - realistické trajektorie a interakce
+    - spontánně vznikají jevy jako lanes nebo oscilace u zúžení
+- Nevýhody:
+    - výpočetně náročný
+    - nutnost kalibrace parametrů (intenzity sil, doba reakce)
