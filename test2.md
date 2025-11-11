@@ -29,7 +29,7 @@
 - topologické vlastnosti: 
 - - stupeň uzlu - počet hran uzlu
 - - shlukování - intenzita vzájemných spojů
-- - nejkratší cesty - vzdálenost mezi uzly je nejmenší počet hran, které tvoří cesu
+- - nejkratší cesty - vzdálenost mezi uzly s nejmenším počtem hran, které tvoří cestu
 
 ### 3. Popište, jak probíhal Milgramův experiment se zásilkami a jaké přinesl zjištění.
 
@@ -45,19 +45,19 @@ odloučenosti
 
 ### 4. Vysvětlete pojmy malý svět, šest kroků separace, Erdősovo číslo.
 
-> todo
 #### Malý svět
 
-- vazby mezi lidmi jsou tak rozsáhlé, že přes pár lidí lze znát všechny na světě
+- mezi libovolnými dvěma uzly existuje poměrně **krátká cesta** a zároveň mají uzly **tendenci vytvářet shluky**
 
 #### Šest kroků separace
 
-- přes méně jak 6 vazeb lze najít kontakt na kohokoliv
+- přes méně jak 6 vazeb lze propojit 2 náhodně vybrané jedince
 
 #### Erdősovo číslo
 
 - vyjadřuje vzdálenost spolupráce
-- první člověk má číslo 0, další 1, k + 1
+- každý člověk (který spolupracoval s Erdasem) má číslo 1, další 2, k + 1
+- vztahuje se k fenoménu "Malého světa"
 
 ### 5. Vysvětlete, jaký význam má stupeň uzlu a rozdělení stupňů uzlů v komplexní síti.
 
@@ -71,7 +71,10 @@ odloučenosti
 
 ### 6. Vysvětlete alespoň tři pojmy, související s hledáním nejkratších cest v síti.
 
-> todo
+- nejkratší cesta - cesta mezi dvěma uzly v síti, která minimalizuje určitou metriku
+- lokální centralita - stupeň uzlu
+- průměr sítě - diametr - nejdelší ze všech nejkratších cest
+- blízkost -  průměrná vzdálenost uzlu od všech ostatní uzlů
 
 ### 7. Popište náhodný graf (Erdős-Rényiho model).
 
@@ -119,21 +122,76 @@ odloučenosti
 - - Pravděpodobnost a statistika
 - - Zkoumání volebních preferencí, kriminality, nezaměstnanosti, sebevražednosti,…
 
-> todo role výpočetních modelů
+#### Výpočetní modely
+
+- Používají matematické a výpočetní metody pro simulaci sociálních systémů, predikci a hlubší pochopení sociální 
+dynamiky a zákonitostí
 
 ### 12. Vysvětlete, co je cílem modelů vývoje kooperace.
 
-> todo
+- vysvětlit jak a proč se v populaci vytváří spolupráce
+- zkoumají:
+1. podmínky za nichž se spolupráce vyplatí - strategie
+2. Mechanismy přenosu strategií – genetické i sociální - učení od úspěšných nebo od rodičů
 
-Vysvětlete, v čem spočívá opakované vězňovo dilema.
-Jmenujte strategie, které lze použít při opakovaném vězňově dilematu.
-Popište, jaké vysvětlující faktory podle E.Rogerse působí při šíření inovací (tj. co přispívá k rychlejšímu či
-pomalejšímu šíření inovace).
-Popište, jaké skupiny osvojitelů inovací definoval E.Rogers a jakou křivkou je popsáno rozložení skupin osvojitelů v
-populaci.
-V přednášce bylo popsáno několik modelů šíření inovací či nákazy, jeden z modelů jmenujte a popište jeho princip.
-V přednášce bylo vysvětleno, jak lze modelovat sociální vliv na utváření a polarizaci názorů, jeden z modelů popište.
-Vysvětlete pojem síla slabých vazeb ve vztahu ke komplexním sítím.
+### 13. Vysvětlete, v čem spočívá opakované vězňovo dilema.
+
+- zkoumá, jak může mezi racionálními hráči vznikat a udržovat se spolupráce
+- Hra probíhá ve více kolech, přičemž si hráči pamatují předchozí chování soupeře a mohou na něj reagovat
+- Krátkodobě se vyplácí zrada
+- Dlouhodobě se vyplácí spolupráce
+
+### 14. Jmenujte strategie, které lze použít při opakovaném vězňově dilematu.
+
+- ALL-C/ALL-D - vždy spolupracovat / vždy zradit
+- RANDOM - náhodné
+- TIT-FOR-TAT - půjčka za oplátku (oko za oko) - v první kole spolupracovat, potom opakovat předchozí tah protihráče
+- TESTER - v prvním kole zradit, potom opakovat předchozí tah protihráče
+- PAVLOV – opakovat minulou volbu, pokud přinesla 3 nebo 5 bodů
+
+### 15. Popište, jaké vysvětlující faktory podle E.Rogerse působí při šíření inovací (tj. co přispívá k rychlejšímu či pomalejšímu šíření inovace).
+
+- Inovace - její prospěšnost, srozumitelnost, kompatibilita, složitost použití, dostupnost
+- Způsob komunikace - jakými cestami se lidé o inovaci dozvídají
+- Čas - proces osvojování, rychlost šíření
+- Sociální systém, osvojitelé (inovátoři, časní osvojitelé, časná většina, pozdní většina, opozdilci)
+
+### 16. Popište, jaké skupiny osvojitelů inovací definoval E.Rogers a jakou křivkou je popsáno rozložení skupin osvojitelů v populaci.
+
+- Inovátoři - rádi riskují a zkoušejí novinky jako první
+- Raní osvojitelé - inovaci přijímají brzy a často ovlivňují ostatní
+- Raní následovníci - přijímají inovaci po delší úvaze, až když vidí její přínosy
+- Pozdní většina - inovaci přijímají až tehdy, když je široce rozšířená a ověřená
+- Opozdilci - přijímají inovace jako poslední nebo vůbec
+
+### 17. V přednášce bylo popsáno několik modelů šíření inovací či nákazy, jeden z modelů jmenujte a popište jeho princip.
+
+#### SIS
+
+- Jedinci se po určité době mohou vrátit zpět do původního stavu - ztrácejí inovaci nebo imunitu
+- Po určité době I → S, takže proces může probíhat cyklicky
+- Tento model odpovídá např. módním trendům nebo produktům, které se lidé po čase „odnaučí“ používat
+- 2 skupiny:
+1. S - náchylní k přijetí inovace
+2. I - dočasní nositelé inovace
+
+### 18. V přednášce bylo vysvětleno, jak lze modelovat sociální vliv na utváření a polarizaci názorů, jeden z modelů popište.
+
+#### Model omezené důvěry
+
+- Agenti jsou umístěni na mřížku a interagují se svými sousedy (sever, jih, východ, západ)
+- Každý agent má názor vyjádřený číslem x1, x2, ...
+- Agenti se navzájem ovlivní jen pokud je rozdíl mezi jejich názory menší než určité prahové číslo |x1 – x2| < d
+- Pokud je rozdíl větší než d, interakce nenastane a názory se neovlivní
+
+### 19. Vysvětlete pojem síla slabých vazeb ve vztahu ke komplexním sítím.
+
+#### Slabé vazby
+- Méně intenzivní nebo méně časté kontakty mezi jednotlivci či skupinami
+- Propojují různé sociální skupiny a umožňují přenos informací
+- Čím více slabých vazeb v síti existuje, tím rychleji a efektivněji se informace šíří mezi vzdálenými částmi sítě
+- Nedostatek slabých vazeb vede k izolaci skupin
+
 Vysvětlete pojem bod zvratu ve vztahu k sociální dynamice, popište jeho zachycení v konkrétním modelu.
 Vysvětlete rozdíl mezi šířením jednoduché nákazy a šířením komplexní nákazy (v síti).
 Vysvětlete pozici simulace mezi vědeckými metodami (např. tak, že uvedete rozdíl mezi indukcí, dedukcí a simulací).
