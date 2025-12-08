@@ -307,3 +307,265 @@ feromonovou stopu úměrnou kvalitě (krátkosti) nalezené cesty a další mrav
 velikost populace a parametry chemické stopy, výstupem je graf zachycující proces transportu potravy do mraveniště.
 Exprimentálně lze zkoumat např. vztah mezi velikostí populace a časem potřebným na transport, nebo vztah mezi
 proměnnými, které definujíí vlastnosti chemické stopy.
+
+## 1. Ants
+
+### Popis modelu
+- model ukazuje stigmergii: mravenci kladou feromonové stopy a hledají potravu
+
+### Vstupy
+1. velikost populace  
+2. parametry feromonu (intenzita, vypařování)
+
+### Výstupy
+- množství dopravené potravy, průběhový graf, mapa stop
+
+### Příklad experimentu
+- vliv velikosti populace na rychlost přenosu potravy  
+- vztah mezi vypařováním feromonu a efektivitou hledání
+
+---
+
+## 2. BeeSmart Hive Finding
+
+### Popis modelu
+- včely kolektivně vybírají nové místo pro úl pomocí tance a hlasování
+
+### Vstupy
+1. počet průzkumnic  
+2. kvalita úlů  
+3. prahová hodnota konsensu
+
+### Výstupy
+- vybraný úl, čas do rozhodnutí
+
+### Příklad experimentu
+- jak změna počtu průzkumnic ovlivní rychlost rozhodnutí  
+- jak šum v odhadu kvality vede k chybnému výběru
+
+---
+
+## 3. Flocking
+
+### Popis modelu
+- model hejn založený na pravidlech: vyhýbání, zarovnání, přibližování
+
+### Vstupy
+1. váhy tří pravidel  
+2. viditelnost  
+3. počet agentů
+
+### Výstupy
+- stabilita hejna, vzory pohybu
+
+### Příklad experimentu
+- vliv váhy alignment na soudržnost hejna  
+- kdy se hejno rozpadá při malé viditelnosti
+
+---
+
+## 4. Termites
+
+### Popis modelu
+- jednoduché chování termitů vede ke shlukování dřevěných třísek
+
+### Vstupy
+1. počet termitů  
+2. počet třísek  
+3. pravděpodobnost zvednutí/položení
+
+### Výstupy
+- míra shlukování, počet hromádek
+
+### Příklad experimentu
+- vliv počtu termitů na rychlost clusteringu  
+- vliv změny pravidel zvednutí/položení
+
+---
+
+## 5. Wolf Sheep Predation
+
+### Popis modelu
+- dynamika predátor–kořist s trávou jako zdrojem obnovy
+
+### Vstupy
+1. počty vlků a ovcí  
+2. reprodukční míry  
+3. rychlost obnovy trávy
+
+### Výstupy
+- časové řady populací
+
+### Příklad experimentu
+- podmínky stabilního soužití populací  
+- vliv obnovy trávy na cykly
+
+---
+
+## 6. Game of Life
+
+### Popis modelu
+- cellulární automat s jednoduchými pravidly a komplexní emergencí
+
+### Vstupy
+1. počáteční konfigurace  
+2. velikost mřížky
+
+### Výstupy
+- vzory (oscilátory, glidery), počet živých buněk
+
+### Příklad experimentu
+- jak malé změny počáteční konfigurace ovlivní výsledek  
+- které vzory jsou stabilní
+
+---
+
+## 7. Segregation
+
+### Popis modelu
+- Schellingův model rezidenční segregace
+
+### Vstupy
+1. tolerance (práh spokojenosti)  
+2. hustota osídlení  
+3. rozložení dvou skupin
+
+### Výstupy
+- mapa segregace, index segregace
+
+### Příklad experimentu
+- vliv tolerance na míru segregace  
+- vliv počátečního promísení
+
+---
+
+## 8. Virus
+
+### Popis modelu
+- šíření viru v prostoru na základě kontaktů agentů
+
+### Vstupy
+1. infekčnost  
+2. délka infekce  
+3. počáteční počet nakažených
+
+### Výstupy
+- průběh počtu nakažených, vyléčených, imunních
+
+### Příklad experimentu
+- jak změna infekčnosti ovlivní epidemii  
+- vliv mobility agentů na šíření
+
+---
+
+## 9. Virus on Network
+
+### Popis modelu
+- šíření viru po sociální síti (grafu)
+
+### Vstupy
+1. typ sítě  
+2. infekčnost  
+3. počáteční nakažení uzly
+
+### Výstupy
+- rychlost šíření, velikost epidemie
+
+### Příklad experimentu
+- odstranění uzlů s vysokým stupněm a jeho vliv  
+- epidemický práh v různých sítích
+
+---
+
+## 10. Vants (Langton’s Ant)
+
+### Popis modelu
+- jednoduchý automat s chaosem a emergentní „dálnicí“
+
+### Vstupy
+1. počet vantů  
+2. počáteční orientace  
+3. barvy buněk
+
+### Výstupy
+- vznikající vzory, směr dálnice
+
+### Příklad experimentu
+- interakce více vantů  
+- vliv změny pravidel otočení
+
+---
+
+## 11. El Farol
+
+### Popis modelu
+- koordinační problém: agenti se rozhodují, zda jít do baru s omezenou kapacitou
+
+### Vstupy
+1. kapacita baru  
+2. predikční strategie  
+3. paměť agentů
+
+### Výstupy
+- počty návštěvníků, stabilita kolem průměru
+
+### Příklad experimentu
+- vliv různých strategií na stabilitu návštěvnosti  
+- co se stane při zvýšení kapacity
+
+---
+
+## 12. Prisoner's Dilemma – Two Person Iterated
+
+### Popis modelu
+- opakovaná hra dvou hráčů, analýza kooperace a defekce
+
+### Vstupy
+1. strategie hráčů  
+2. počet kol  
+3. výplatní matice
+
+### Výstupy
+- celkové výplaty, míra kooperace v čase
+
+### Příklad experimentu
+- porovnání Tit-for-Tat a Always Defect  
+- kdy se vyplatí odpouštět
+
+---
+
+## 13. Prisoner's Dilemma – N-Person Iterated
+
+### Popis modelu
+- dilema veřejných statků v rámci více hráčů
+
+### Vstupy
+1. počet hráčů  
+2. strategie  
+3. počet opakování
+
+### Výstupy
+- průměrná kooperace, udržení/kolaps veřejného statku
+
+### Příklad experimentu
+- vliv velikosti skupiny na kooperaci  
+- účinnost trestajících strategií
+
+---
+
+## 14. Prisoner's Dilemma – Basic Evolutionary
+
+### Popis modelu
+- evoluční dynamika strategií, úspěšné strategie se rozmnožují
+
+### Vstupy
+1. počáteční podíly strategií  
+2. výplatní matice  
+3. selekční pravidla
+
+### Výstupy
+- vývoj podílů strategií, stabilní evoluční strategie
+
+### Příklad experimentu
+- kdy přežije Tit-for-Tat  
+- kdy defekce převládne
