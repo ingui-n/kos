@@ -47,6 +47,8 @@
 
 ### 3. Vysvětlete model Polyovy urny.
 
+Zobrazuje šíření trendů, popularity, ...
+
 - model systému, který se řídí se zákonem rostoucích výnosů
 - Urna s černými a bílými kameny, které postupně losujeme
 - Kámen, který vylosujeme, vložíme zpět a přidáme další kámen téže barvy
@@ -60,18 +62,18 @@
 
 #### Umělá společnost
 
-- Model, ve kterém mnoho jednoduchých agentů vzájemně interaguje podle předem daných pravidel a z těchto interakcí
-  vznikají složité jevy na úrovni celé „společnosti“ - emergence
+- Model, ve kterém mnoho jednoduchých agentů vzájemně interaguje **podle předem daných pravidel** a z těchto interakcí
+  **vznikají složité jevy** na úrovni celé „společnosti“ - emergence
 - příklad: model Sugarscape
 
 #### Syntetická populace
 
-- Uměle vytvořený soubor „jedinců“, který statisticky odpovídá skutečné populaci (např. podle věku, pohlaví).
+- Uměle vytvořený soubor „jedinců“, který **statisticky odpovídá skutečné populaci** (např. podle věku, pohlaví).
 - Slouží k simulaci a analýze chování celé společnosti (např. šíření epidemie, dopravy, evakuace)
 
 #### Výpočetní ekonomika
 
-- přístup v ekonomii, který používá počítačové modely a simulace k analýze chování ekonomických systémů, místo aby
+- přístup v ekonomii, který používá počítačové modely a simulace k **analýze chování ekonomických systémů**, místo aby
   spoléhal jen na čistě analytické (papír–tužka) modely.
 - Zaměřuje se na situace, kde je ekonomika chápána jako komplexní systém mnoha interagujících aktérů, a pomocí výpočtů
   zkoumá vznik makrojevů, jako jsou tržní cykly, krize nebo dopady regulací.
@@ -189,21 +191,22 @@
 
 #### Adaptivita
 
-Schopnost systému měnit své chování podle zkušenosti nebo podle změn v prostředí (učení, evoluce, změna strategií)
+Schopnost systému **měnit své chování podle zkušenosti** nebo podle změn v prostředí (učení, evoluce, změna strategií)
 
-#### Emargence
+#### Emergence
 
-Jev, kdy z těchto lokálních změn a interakcí jednotlivých částí vznikají nové, „globální“ vzorce chování systému,
+Jev, kdy z těchto lokálních změn a **interakcí** jednotlivých částí **vznikají nové, „globální“ vzorce chování**
+systému,
 které nejsou přímo naprogramované ani triválně odvoditelné z vlastností jednotlivých částí.
 
 ### 12. Uvedťe, jaké výpočetní přístupy lze použít k implementaci adaptivních agentů nebo adaptivních populací.
 
-- reinforcement learning - agent si zkouší akce v prostředí a podle odměn/trestů upravuje svou politiku chování
-- evoluční a genetické algoritmy - pracují s populací jedinců, které se selekcí, mutacemi a rekombinací postupně
+- **reinforcement learning** - agent si zkouší akce v prostředí a podle odměn/trestů upravuje svou politiku chování
+- **evoluční a genetické algoritmy** - pracují s populací jedinců, které se selekcí, mutacemi a rekombinací postupně
   zlepšují podle zvolené fitness funkce
-- neuronové sítě - slouží jako adaptivní funkce/mapování, které se průběžně učí na datech nebo v kombinaci s
+- **neuronové sítě** - slouží jako adaptivní funkce/mapování, které se průběžně učí na datech nebo v kombinaci s
   reinforcement learning
-- Bayesovské učení + jednoduché heuristiky – modely chování při epidemiích
+- Bayesovské učení + **jednoduché heuristiky** – modely chování při epidemiích
 
 ### 13. Uveďte příklad komplexního systému s adaptivními agenty.
 
@@ -236,7 +239,7 @@ v prostředí, ale dohromady tak vznikají organizované trasy a složité struk
 
 ### 16. Vysvětlete princip ACO algoritmů.
 
-- spočívá v iterativní simulaci kolonie umělých mravenců, kteří v grafu náhodně prohledávají cesty mezi uzly (např.
+- spočívá v **iterativní simulaci kolonie umělých mravenců**, kteří v grafu náhodně prohledávají cesty mezi uzly (např.
   městy v obchodním cestujícím) a na hranách zanechávají „feromonové stopy“ úměrné kvalitě nalezeného řešení – kratší
   cesta znamená silnější stopu
 
@@ -254,8 +257,8 @@ v prostředí, ale dohromady tak vznikají organizované trasy a složité struk
 - Hledá se nejkratší okružní cesta, která každým městem projde právě jednou
 - Mravenec je agent s těmito vlastnostmi:
 -
-    - Volí si další město na základě pravděpodobnosti, která je funkcí vzdálenosti města
-      a množství feromonu na cestě k městu
+    - Volí si **další město na základě pravděpodobnosti**, která je **funkcí vzdálenosti města
+      a množství feromonu** na cestě k městu
 -
     - Již navštívené město si znovu vybrat nemůže (tabu-list – nakonec se použije k
       výpočtu délky cesty daného mravence)
@@ -268,15 +271,20 @@ Proces, který zajišťuje, aby činnosti jednotlivých agentů byly vzájemně 
 systém jako celek směřuje k žádoucím cílům místo chaotického chování. Jde tedy o to, jak se mnoho autonomních agentů
 domluví „kdo co kdy dělá“, aby minimalizovali konflikty (kolize, zácpy, duplicity) a maximalizovali společný výkon
 
-TODO: idk jestli to má být tohle
+#### Sdílená pravidla
 
-#### Implicitní koordinace a lokální pravidla interakce
+Všem agentům se dá stejné jednoduché pravidlo chování (např. „uhni vlevo, když se někdo blíží“). Koordinace vzniká tím,
+že všichni používají kompatibilní strategii.
 
-Vzejde z jednoduchých pravidel agentů a lokálního vnímání (např. Ants, Flocking, modely pohybu chodců)
+#### Lokální interakce
 
-#### Explicitní koordinace
+Agent pozoruje své okolí a upravuje chování podle sousedů (např. sladění směru pohybu u modelů hejnového chování).
+Koordinace emerguje z opakovaných lokálních reakcí.
 
-Agenti plní role nebo dodržují přidělené strategie (např. Traffic Grid, týmy hasičů, týmy hokejistů,… )
+#### Učení a adaptace
+
+Koordinace může vzniknout z posilování úspěšných strategií: agenti si pamatují, co fungovalo, a přizpůsobují se (
+reinforcement learning, evolucionární strategie).
 
 ### 19. Popište koordinaci založenou na lokálních pravidlech, uveďte příklad aplikace.
 
@@ -290,14 +298,12 @@ sledovat cíl nebo vytvářet formace bez centrálního plánovače.
 
 ### 20. Popište koordinaci založenou na stigmergii, uveďte příklad aplikace.
 
-Nepřímá koordinace agentů prostřednictvím změn ve sdíleném prostředí: každý agent zanechá v prostředí nějakou „stopu“ (
-značku, feromon, záznam v tabulce, změnu mapy) a ostatní agenti na tyto stopy reagují svým chováním. Agenti si tedy
-přímo neposílají zprávy ani nemají centrálního koordinátora; společné chování systému vzniká z lokálních reakcí na tyto
-stopy (samoorganizace).
+Koordinace založená na stigmergii vzniká nepřímo přes úpravy prostředí: agent něco zanechá ve svém okolí a ostatní podle
+této stopy reagují, aniž by se přímo domlouvali.
 
-Příkladem aplikace je mravenčí optimalizace cest: virtuální „mravenci“ při průchodu grafem posilují na hranách
-feromonovou stopu úměrnou kvalitě (krátkosti) nalezené cesty a další mravenci pak preferují hrany se silnější stopou,
-čímž se kolonie postupně zkoordinuje na dobrém nebo optimálním řešení.
+#### Příklad
+Mravenci ukládají feromonové stopy – čím silnější stopa, tím více mravenců po ní jde, což vede k samo-organizovanému
+výběru nejkratší cesty. Podobný princip se používá v optimalizačních algoritmech typu ACO (Ant Colony Optimization)
 
 ### Models Library NetLogo
 
@@ -333,8 +339,8 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 - průzkumnice hledají lokality, tančícím „waggle dance“ sdělují kvalitu místa a kolonie emergentně dosáhne konsenzu
 
 ### Vstupy
-1. počet průzkumnic  
-2. kvalita úlů  
+1. počet průzkumnic
+2. kvalita úlů
 3. prahová hodnota konsensu
 
 ### Výstupy
