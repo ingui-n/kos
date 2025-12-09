@@ -330,6 +330,7 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 
 ### Popis modelu
 - včely kolektivně vybírají nové místo pro úl pomocí tance a hlasování
+- průzkumnice hledají lokality, tančícím „waggle dance“ sdělují kvalitu místa a kolonie emergentně dosáhne konsenzu
 
 ### Vstupy
 1. počet průzkumnic  
@@ -348,7 +349,8 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 ## 3. Flocking
 
 ### Popis modelu
-- model hejn založený na pravidlech: vyhýbání, zarovnání, přibližování
+- model hejn založený na pravidlech: udržuj vzdálenost, zarovnávej směr, drž se blízko skupiny
+- výsledkem je realistické emergentní „hejno“
 
 ### Vstupy
 1. váhy tří pravidel  
@@ -387,6 +389,7 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 
 ### Popis modelu
 - dynamika predátor–kořist s trávou jako zdrojem obnovy
+- vlci jedí ovce, ovce se množí, tráva roste
 
 ### Vstupy
 1. počty vlků a ovcí  
@@ -406,6 +409,7 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 
 ### Popis modelu
 - cellulární automat s jednoduchými pravidly a komplexní emergencí
+- každá buňka žije nebo umírá podle počtu sousedů
 
 ### Vstupy
 1. počáteční konfigurace  
@@ -424,6 +428,7 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 
 ### Popis modelu
 - Schellingův model rezidenční segregace
+- agenti dvou typů (např. barva) se stěhují, pokud v sousedství není dostatek „podobných“ agentů
 
 ### Vstupy
 1. tolerance (práh spokojenosti)  
@@ -443,6 +448,7 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 
 ### Popis modelu
 - šíření viru v prostoru na základě kontaktů agentů
+- lidé se pohybují, nemoc se přenáší kontaktem, někteří se uzdraví nebo zemřou
 
 ### Vstupy
 1. infekčnost  
@@ -462,6 +468,7 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 
 ### Popis modelu
 - šíření viru po sociální síti (grafu)
+- ukazuje, jak struktura sítě (scale-free, random, small-world) ovlivňuje průběh epidemie
 
 ### Vstupy
 1. typ sítě  
@@ -481,6 +488,7 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 
 ### Popis modelu
 - jednoduchý automat s chaosem a emergentní „dálnicí“
+- mravenec mění směr podle barvy dlaždice a dlaždici následně přepne
 
 ### Vstupy
 1. počet vantů  
@@ -500,6 +508,7 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 
 ### Popis modelu
 - koordinační problém: agenti se rozhodují, zda jít do baru s omezenou kapacitou
+- agent chce jít, jen pokud tam nebude moc lidí
 
 ### Vstupy
 1. kapacita baru  
@@ -518,7 +527,8 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 ## 12. Prisoner's Dilemma – Two Person Iterated
 
 ### Popis modelu
-- opakovaná hra dvou hráčů, analýza kooperace a defekce
+- dva hráči opakovaně hrají vězňovo dilema, každý se učí strategii (např. tit-for-tat)
+- analýza kooperace a defekce
 
 ### Vstupy
 1. strategie hráčů  
@@ -537,7 +547,8 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 ## 13. Prisoner's Dilemma – N-Person Iterated
 
 ### Popis modelu
-- dilema veřejných statků v rámci více hráčů
+- více hráčů opakovaně hraje variantu PD v „skupině“
+- ukazuje, jak těžké je udržet spolupráci ve velkých komunitách, kde je výhodné černé pasažérství
 
 ### Vstupy
 1. počet hráčů  
@@ -556,7 +567,9 @@ proměnnými, které definujíí vlastnosti chemické stopy.
 ## 14. Prisoner's Dilemma – Basic Evolutionary
 
 ### Popis modelu
-- evoluční dynamika strategií, úspěšné strategie se rozmnožují
+- velká populace strategií PD (např. spolupracující, zrazující, tit-for-tat).
+- strategie se evolučně množí podle úspěšnosti.
+- model ukazuje, kdy může evoluce podporovat spolupráci a kdy převládne zrada.
 
 ### Vstupy
 1. počáteční podíly strategií  
